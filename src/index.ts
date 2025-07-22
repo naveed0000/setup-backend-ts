@@ -1,11 +1,12 @@
-import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./db";
+import { app } from "./app";
 
 dotenv.config({
   path: "./.env",
- });
-const app = express();
+});
+console.log(process.env.ACCESS_TOKEN_EXPIRY, 'asdasd');
+
 connectDB()
   .then(() => {
     app.listen(process.env.PORT || 8000, () => {
